@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Arcade Catcher</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fundo animado -->
+    <div class="background-animation"></div>
+
+    <div class="main-layout">
+        <!-- Máquina de Arcade (Jogo) -->
+        <div class="arcade-cabinet">
+            <header class="cabinet-header">
+                <h1>✈️ SKY CATCHER ⚡</h1>
+            </header>
+
+            <div class="dashboard">
+                <div class="stat-box">Pontos: <span id="score">0</span></div>
+                <div class="stat-box">Vidas: <span id="lives">❤️❤️❤️</span></div>
+            </div>
+
+            <div class="canvas-wrapper">
+                <canvas id="gameCanvas" width="700" height="480"></canvas>
+                
+                <!-- Tela de Início -->
+                <div id="startScreen" class="overlay-screen">
+                    <h2>PRONTO PARA VOAR?</h2>
+                    <p>Use as setas ou os botões para mover o avião.</p>
+                    <button id="startBtn">INICIAR JOGO</button>
+                </div>
+
+                <!-- Tela de Game Over -->
+                <div id="gameOverScreen" class="overlay-screen hidden">
+                    <h2>FIM DE JOGO</h2>
+                    <p>Sua pontuação: <span id="finalScore">0</span></p>
+                    
+                    <div id="saveScoreContainer">
+                        <input type="text" id="playerName" placeholder="Digite seu apelido" maxlength="10">
+                        <button id="saveScoreBtn">Salvar Recorde</button>
+                    </div>
+
+                    <button id="restartBtn" class="hidden">JOGAR NOVAMENTE</button>
+                </div>
+            </div>
+
+            <!-- Controles Mobile (Aparecem apenas no celular) -->
+            <div class="mobile-controls">
+                <button id="leftBtn" class="control-btn">⬅️</button>
+                <button id="rightBtn" class="control-btn">➡️</button>
+            </div>
+
+            <div class="footer-hint">
+                Pegue os cristais 💎 • Evite as bombas 💣!
+            </div>
+        </div>
+
+        <!-- Painel de Placar / Leaderboard -->
+        <div class="leaderboard-panel">
+            <h2>🏆 TOP RECORDES</h2>
+            <ul id="leaderboardList">
+                <!-- Preenchido via JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
